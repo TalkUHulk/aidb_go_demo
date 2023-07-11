@@ -1,0 +1,79 @@
+syntax = "v1"
+
+type (
+	RigsterReq {
+		FlowUUID string   `json:"flow_uuid"`
+		Backend  []string `json:"backend"`
+		Model    []string `json:"model"`
+		Zoo      string   `json:"zoo"`
+	}
+	unRigsterReq {
+		FlowUUID string `json:"flow_uuid"`
+	}
+
+	QueryReq {
+		FlowUUID    string `json:"flow_uuid"`
+		ImageBase64 string `json:"image_base64"`
+	}
+
+	FaceResult {
+		BBox     []float32   `json:"bbox"`
+		Conf     float32     `json:"conf"`
+		LandMark [][]float32 `json:"landmark"`
+		Parsing  string      `json:"parsing"`
+	}
+
+	ObjectResult {
+		BBox  []float32 `json:"bbox"`
+		Conf  float32   `json:"conf"`
+		Label int       `json:"label"`
+	}
+
+	OCRResult {
+		Box        [][]float32 `json:"box"`
+		Conf       float32     `json:"conf"`
+		ConfRotate float32     `json:"conf_rotate"`
+		Label      string      `json:"label"`
+	}
+
+	ClsResult {
+		Conf  float32 `json:"conf"`
+		Label int     `json:"label"`
+	}
+
+	QueryReply {
+		Code      int            `json:"code"`
+		Msg       string         `json:"msg"`
+		Face      []FaceResult   `json:"face"`
+		Object    []ObjectResult `json:"object"`
+		Ocr       []OCRResult    `json:"ocr"`
+		Cls       []ClsResult    `json:"cls"`
+		Anime     string         `json:"anime"`
+		Tddfa     string         `json:"tddfa"`
+		KeyPoints [][]float32    `json:"key_points"`
+	}
+
+	StatusReply {
+		Msg  string `json:"msg"`
+		Code int    `json:"code"`
+	}
+)
+
+@server (
+	timeout: 3s
+	prefix: /talkuhulk
+)
+
+service aidb {
+	@doc "注册服务"
+	@handler register
+	post /aidb/register (RigsterReq) returns (StatusReply)
+
+	@doc "注销服务"
+	@handler unregister
+	post /aidb/unregister (unRigsterReq) returns (StatusReply)
+
+	@doc "查询服务"
+	@handler query
+	post /aidb/query (QueryReq) returns (QueryReply)
+}
