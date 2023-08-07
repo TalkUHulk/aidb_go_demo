@@ -2,6 +2,7 @@
 
 * CGo demo on Google Colab: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/15DTMnueAv2Y3UMk7lhXMMN_VVUCBA0qh?usp=drive_link)
 
+
 [AiDB](https://github.com/TalkUHulk/ai.deploy.box) deployed as the server by go-zeros.
 
 ## Tested Environment
