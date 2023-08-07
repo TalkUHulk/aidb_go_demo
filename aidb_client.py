@@ -10,14 +10,14 @@ register_url = "http://127.0.0.1:12580/talkuhulk/aidb/register"
 unregister_url = "http://127.0.0.1:12580/talkuhulk/aidb/unregister"
 query_url = "http://127.0.0.1:12580/talkuhulk/aidb/query"
 
-register_body = {"flow_uuid": "HulkShow", "model": ["scrfd_500m_kps", "pfpld"], "backend": ["mnn", "mnn"], "zoo": "./config"}
-unregister_body = {"flow_uuid": "HulkShow"}
+register_body = {"flow_uuid": "i'm uuid", "model": ["scrfd_500m_kps", "pfpld"], "backend": ["mnn", "mnn"], "zoo": "./config"}
+unregister_body = {"flow_uuid": "i'm uuid"}
 
-test_image = "/Users/hulk/Desktop/beckham.jpg"
+test_image = "./test.jpg"
 with open(test_image, "rb") as f:
     images_base64 = base64.b64encode(f.read()).decode('utf8')
 
-query_body = {"flow_uuid": "HulkShowTddfa", "image_base64": images_base64}
+query_body = {"flow_uuid": "i'm uuid", "image_base64": images_base64}
 
 request_body = ujson.dumps(query_body)
 
