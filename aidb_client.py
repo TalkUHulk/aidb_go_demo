@@ -13,6 +13,14 @@ query_url = "http://127.0.0.1:12580/talkuhulk/aidb/query"
 register_body = {"flow_uuid": "i'm uuid", "model": ["scrfd_500m_kps", "pfpld"], "backend": ["mnn", "mnn"], "zoo": "./config"}
 unregister_body = {"flow_uuid": "i'm uuid"}
 
+# register task
+
+response = requests.post(url=register_url, data=ujson.dumps(register_body), headers={"content-type": "application/json"})
+if not response.ok:
+    print(response.text)
+    exit(-1)
+
+# query
 test_image = "./test.jpg"
 with open(test_image, "rb") as f:
     images_base64 = base64.b64encode(f.read()).decode('utf8')
