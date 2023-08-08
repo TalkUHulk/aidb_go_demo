@@ -31,7 +31,7 @@ generate **libAiDB_C.so** in ai.deploy.box/build/source/ and put it in internal/
 
 * prepare files demo need.
 
-download [models](https://github.com/TalkUHulk/ai.deploy.box/releases/download/1.0.0/models-lite.zip) and unzip in aidb_lua_demo rename models, and put ai.deploy.box/extra、ai.deploy.box/config in aidb_go_demo/extra、 aidb_go_demo/config
+download [models](https://github.com/TalkUHulk/ai.deploy.box/releases/download/1.0.0/models-lite.zip) and unzip it then rename models, and put ai.deploy.box/extra、ai.deploy.box/config in aidb_go_demo/extra、 aidb_go_demo/config
 
 put [aidb_c_api.h](https://github.com/TalkUHulk/ai.deploy.box/blob/main/source/c_api/aidb_c_api.h) in internal/aidb/include.
 
