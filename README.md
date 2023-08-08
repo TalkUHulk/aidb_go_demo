@@ -3,7 +3,8 @@
 * CGo demo on Google Colab: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/15DTMnueAv2Y3UMk7lhXMMN_VVUCBA0qh?usp=drive_link)
 
 
-[AiDB](https://github.com/TalkUHulk/ai.deploy.box) deployed as the server by go-zeros.
+
+[AiDB](https://github.com/TalkUHulk/ai.deploy.box) deployed as the server by [go-zeros](https://github.com/zeromicro/go-zero).
 
 ## Tested Environment
 
@@ -37,7 +38,7 @@ put [aidb_c_api.h](https://github.com/TalkUHulk/ai.deploy.box/blob/main/source/c
 
 * modify port
 
-custom ./etc/aidb.yaml
+custom [aidb.yaml](./etc/aidb.yaml)
 
 * Run
 
@@ -52,7 +53,7 @@ go run aidb.go
 
 * Test
 
-reference aidb_client.py
+reference [aidb_client.py](aidb_client.py)
 
 
 
